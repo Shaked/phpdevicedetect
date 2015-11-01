@@ -1,0 +1,27 @@
+{
+  "require": {
+    "Shaked/user-agents": "dev-master"
+  },
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "Shaked/user-agents",
+        "version": "master",
+        "source": {
+          "url": "/Users/Shaked/Projects/devices/user-agents",
+          "type": "git",
+          "reference": "master"
+        },
+        "autoload": {
+          "classmap": [
+            "."
+          ]
+        }
+      }
+    }
+  ],
+  "scripts": {
+    "post-autoload-dump": "sh ./post-install.sh"
+  }
+}
