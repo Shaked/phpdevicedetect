@@ -1,6 +1,19 @@
 {
+  "name": "Shaked/device-detect",
+  "type": "project",
+  "license": "MIT",
+  "description": "Device Detect",
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  },
   "require": {
-    "Shaked/user-agents": "dev-master"
+    "Shaked/user-agents": "master"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.8.*",
+    "athletic/athletic": "~0.1"
   },
   "repositories": [
     {
@@ -22,6 +35,14 @@
     }
   ],
   "scripts": {
-    "post-autoload-dump": "sh ./post-install.sh"
-  }
+    "pre-install-cmd": "composer remove Shaked/user-agents",
+    "post-install-cmd": "sh ./post-install.sh"
+  },
+  "authors": [
+    {
+      "name": "Shaked Klein Orbach",
+      "email": "klein.shaked@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev"
 }
