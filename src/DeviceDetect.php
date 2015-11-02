@@ -45,7 +45,6 @@ class DeviceDetect {
             self::$compiledUserAgents = require_once __DIR__ . "/../vendor/Shaked/user-agents/compiled-user-agents.php";
         }
         $compiledUserAgents = self::$compiledUserAgents;
-        //TODO: $compiledPriorityUserAgents = require_once "vendor/Shaked/user-agents/compiled-priority-user-agents.php";
 
         $hash = hash($compiledUserAgents["meta"]["hash"], $userAgent);
         if (!isset($compiledUserAgents["userAgents"][$hash])) {
