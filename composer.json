@@ -22,7 +22,7 @@
         "name": "Shaked/user-agents",
         "version": "master",
         "source": {
-          "url": "/Users/Shaked/Projects/devices/user-agents",
+          "url": "https://github.com/Shaked/user-agents",
           "type": "git",
           "reference": "master"
         },
@@ -35,7 +35,7 @@
     }
   ],
   "scripts": {
-    "pre-install-cmd": "composer remove Shaked/user-agents",
+    "pre-install-cmd": "rm -rf ./vendor/Shaked/user-agents && composer remove Shaked/user-agents",
     "post-install-cmd": "sh ./post-install.sh"
   },
   "authors": [
