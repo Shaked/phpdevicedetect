@@ -99,6 +99,14 @@ class DeviceDetect {
     }
 
     /**
+     * @todo  check if this make sense
+     * @return bool
+     */
+    public function isUnknown() {
+        return !$this->meta->type;
+    }
+
+    /**
      * @return array
      */
     public function getBrowsers() {

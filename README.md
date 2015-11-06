@@ -26,6 +26,7 @@ try {
         "isTv"      => (int) $deviceDetect->isTv(),
         "isWatch"   => (int) $deviceDetect->isWatch(),
         "isBot"     => (int) $deviceDetect->isBot(),
+        "isUnknown" => (int) $deviceDetect->isUnknown(),
     ]);
 } catch (\InvalidArgumentException $e) {
     echo $e->getMessage();
@@ -34,4 +35,4 @@ try {
 
 ### Contribute
 
-If you wish to contribute, please just make sure that if its user agent related, you should add it to the [user agent repository]().
+If you wish to contribute, please just make sure that if its user agent related, you should add it to the [user agent repository](https://github.com/Shaked/user-agents).
