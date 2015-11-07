@@ -1,6 +1,6 @@
 ## Device Detect Package for PHP
 
-This package contains the ability to detect different devices by it's user agent.
+Provides the ability to detect different devices by it's user agent.
 
 ### Status: not stable yet!
 

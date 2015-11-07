@@ -1,8 +1,8 @@
 {
-  "name": "Shaked/device-detect",
+  "name": "Shaked/phpdevicedetect",
   "type": "project",
   "license": "MIT",
-  "description": "Device Detect",
+  "description": "Provides the ability to detect different devices by it's user agent.",
   "autoload": {
     "psr-4": {
       "": "src/"
