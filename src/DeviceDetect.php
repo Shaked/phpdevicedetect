@@ -46,13 +46,27 @@ class DeviceDetect {
         }
         $compiledUserAgents = self::$compiledUserAgents;
 
-        $hash = hash($compiledUserAgents["meta"]["hash"], $userAgent);
+        $hash = self::getHashedUserAgent($userAgent, $compiledUserAgents["meta"]["hash"]);
         if (!isset($compiledUserAgents["userAgents"][$hash])) {
             throw new \InvalidArgumentException("User agent $userAgent is unknown. Please update user-agents repository for future support");
         }
 
         $meta = (object) $compiledUserAgents["userAgents"][$hash];
         return new self($meta);
+    }
+
+    /**
+     * @param $userAgent
+     * @param $hashFunc
+     */
+    private static function getHashedUserAgent($userAgent, $hashFunc) {
+        switch ($hashFunc) {
+        case "crc32b":
+            return crc32($userAgent);
+            break;
+        }
+
+        throw new \InvalidArgumentException("Invalid hashing function: $hashFunc");
     }
 
     /**
