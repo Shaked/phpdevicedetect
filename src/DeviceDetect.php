@@ -46,7 +46,7 @@ class DeviceDetect {
         }
         $compiledUserAgents = self::$compiledUserAgents;
 
-        $hash = self::getHashedUserAgent($userAgent, $compiledUserAgents["meta"]["hash"]);
+        $hash = self::getHashedUserAgent(strtolower($userAgent), $compiledUserAgents["meta"]["hash"]);
         if (!isset($compiledUserAgents["userAgents"][$hash])) {
             throw new \InvalidArgumentException("User agent $userAgent is unknown. Please update user-agents repository for future support");
         }
