@@ -15,7 +15,7 @@ class DeviceDetectTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals("46.0.2490.64", $deviceDetect->getBrowsers()[0]->getVersion());
         $this->assertEquals("Macintosh", $deviceDetect->getPlatform()->getName());
         $this->assertEquals("10.10.5", $deviceDetect->getPlatform()->getVersion());
-        $this->assertEquals($userAgent, $deviceDetect->getUserAgent());
+        $this->assertEquals(strtolower($userAgent), $deviceDetect->getUserAgent());
     }
     /**
      * @dataProvider providerPlatform
@@ -99,6 +99,22 @@ class DeviceDetectTest extends \PHPUnit_Framework_TestCase {
         $deviceDetect = new \DeviceDetect($meta);
         $this->assertEquals(true, $deviceDetect->isBot());
 
+        $this->assertEquals(false, $deviceDetect->isTablet());
+        $this->assertEquals(false, $deviceDetect->isMobile());
+        $this->assertEquals(false, $deviceDetect->isDesktop());
+        $this->assertEquals(false, $deviceDetect->isTv());
+        $this->assertEquals(false, $deviceDetect->isWatch());
+    }
+
+    /**
+     * @dataProvider providerPlatform
+     */
+    public function testThatPlatformIsGlass(stdClass $meta) {
+        $meta->type = "glass";
+        $deviceDetect = new \DeviceDetect($meta);
+        $this->assertEquals(true, $deviceDetect->isGlass());
+
+        $this->assertEquals(false, $deviceDetect->isBot());
         $this->assertEquals(false, $deviceDetect->isTablet());
         $this->assertEquals(false, $deviceDetect->isMobile());
         $this->assertEquals(false, $deviceDetect->isDesktop());

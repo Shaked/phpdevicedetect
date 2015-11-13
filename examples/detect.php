@@ -11,6 +11,7 @@ try {
         "isTv"      => (int) $deviceDetect->isTv(),
         "isWatch"   => (int) $deviceDetect->isWatch(),
         "isBot"     => (int) $deviceDetect->isBot(),
+        "isGlass"   => (int) $deviceDetect->isGlass(),
         "isUnknown" => (int) $deviceDetect->isUnknown(),
     ]);
 } catch (\InvalidArgumentException $e) {

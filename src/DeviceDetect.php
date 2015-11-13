@@ -113,6 +113,13 @@ class DeviceDetect {
     }
 
     /**
+     * @return bool
+     */
+    public function isGlass() {
+        return $this->meta->type == "glass";
+    }
+
+    /**
      * @todo  check if this make sense
      * @return bool
      */
